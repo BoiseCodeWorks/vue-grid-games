@@ -1,0 +1,14 @@
+.col-sm-4{
+  height: 80px;
+  width: 80px;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.col-sm-4:hover{
+  background-color: rgba(55, 30, 180, .3)
+}
+
+.on{
+  background-color: yellow;
+}

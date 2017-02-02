@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>vue-grid-games</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+
+<div class="container" id="gameboard">
+  <button type="button" @click="solve">I SO SMART</button>
+  <form @submit.prevent="buildGrid(rows, cols)">
+    <input type="number" v-model="rows" v-on:keyup="buildGrid(rows, cols)">
+    <input type="number" v-model="cols">
+    <button type="submit">BUILD GRID</button>
+  </form>
+  <div class="row" v-for="(row, rowIndex) in grid">
+    <div v-for="(col, colIndex) in row" class="col-sm-4" @click="toggleCol(col, rowIndex, colIndex)" :class="{on: col.on}">
+      {{col.cords.y}},{{col.cords.x}}
+    
+    
+    </div>
+  </div>
+
+
+
+
+
+  <!--<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4" :class="{'on': false}"></div>
+    <div class="col-sm-4" :class="{'on': true}" ></div>
+    <div class="col-sm-4" :class="{'on': true}"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"></div>
+  </div>-->
+</div>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
+
+<script src="grid.js"></script>
+
+
+</body>
+</html>
